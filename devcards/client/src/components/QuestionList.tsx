@@ -9,8 +9,6 @@ interface QuestionListProps {
 export const QuestionList = (props: QuestionListProps) => {
   const { question, onNextQuestion } = props;
 
-  // console.log("questions", question);
-
   return (
     <>
       <h1 className="text-3xl font-bold justify-center items-center flex mb-4">
