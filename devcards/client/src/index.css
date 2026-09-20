@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@theme {
+  --color-glass-teal-start: #0a8f7a;
+  --color-glass-teal-mid: #049885;
+  --color-glass-teal-end: #06c98e;
+  --color-glass-dark: #041c18;
+}

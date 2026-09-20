@@ -19,6 +19,8 @@ export const QuestionList = (props: QuestionListProps) => {
         key={question.id}
         question={question.question}
         answer={question.answer}
+        level={question.level}
+        category={question.category}
       />
 
       <button
