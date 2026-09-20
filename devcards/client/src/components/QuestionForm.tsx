@@ -34,16 +34,23 @@ export const QuestionForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-3 max-w-md mx-auto mb-8 p-4 border rounded"
+      className="flex flex-col gap-4 w-full max-w-md mx-auto mb-8 p-7 rounded-[34px]
+                 bg-gradient-to-br from-white/25 via-white/10 to-white/[0.06]
+                 backdrop-blur-2xl backdrop-saturate-150
+                 border border-white/40
+                 shadow-[0_24px_60px_rgba(30,20,70,0.35),inset_0_1px_0_rgba(255,255,255,0.5)]
+                 text-white"
     >
-      <h2 className="font-bold text-2xl text-center">Add question</h2>
+      <h2 className="font-bold text-2xl text-center text-white">
+        Add question
+      </h2>
 
       <textarea
         placeholder="Question"
         value={form.question}
         onChange={(e) => setForm({ ...form, question: e.target.value })}
         required
-        className="border rounded p-2"
+        className="bg-white/10 border border-white/25 rounded-xl p-3 text-white placeholder-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-white/40 resize-none"
       />
 
       <textarea
@@ -51,7 +58,7 @@ export const QuestionForm = () => {
         value={form.answer}
         onChange={(e) => setForm({ ...form, answer: e.target.value })}
         required
-        className="border rounded p-2"
+        className="bg-white/10 border border-white/25 rounded-xl p-3 text-white placeholder-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-white/40 resize-none"
       />
 
       <select
@@ -59,7 +66,7 @@ export const QuestionForm = () => {
         onChange={(e) =>
           setForm({ ...form, level: e.target.value as QuestionLevel })
         }
-        className="border rounded p-2"
+        className="bg-white/10 border border-white/25 rounded-xl p-3 text-white backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-white/40 [&>option]:text-black"
       >
         <option value="junior">Junior</option>
         <option value="medior">Medior</option>
@@ -71,7 +78,7 @@ export const QuestionForm = () => {
         onChange={(e) =>
           setForm({ ...form, category: e.target.value as QuestionCategory })
         }
-        className="border rounded p-2"
+        className="bg-white/10 border border-white/25 rounded-xl p-3 text-white backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-white/40 [&>option]:text-black"
       >
         <option value="javascript">JavaScript</option>
         <option value="typescript">TypeScript</option>
@@ -81,13 +88,13 @@ export const QuestionForm = () => {
       <button
         type="submit"
         disabled={isPending}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50"
+        className="bg-glass-dark/60 hover:bg-glass-dark/80 border border-white/25 backdrop-blur-md text-white font-bold py-3 px-6 rounded-full transition-colors duration-200 disabled:opacity-50"
       >
         {isPending ? "Adding..." : "Add question"}
       </button>
 
       {isError && (
-        <p className="text-red-500 text-center">Failed to add question.</p>
+        <p className="text-red-200 text-center">Failed to add question.</p>
       )}
     </form>
   );
